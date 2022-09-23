@@ -3,7 +3,7 @@ import Carro from './Cart'
 
 const CartWidget = () => {
   return (
-    <div>
+    <div >
         <Carro />
     </div>
   )

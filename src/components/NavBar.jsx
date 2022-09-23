@@ -18,8 +18,8 @@ const NavBar = () => {
                         <li><a href="#" className="nav-link px-2 link-dark">Contacto</a></li>
                         <li><a href="#" className="nav-link px-2 link-dark">Ayuda</a></li>
                     </ul>     
-		        </div>
                 <CartWidget />
+		        </div>
             </div>
         </header>
     </div>
