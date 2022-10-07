@@ -1,11 +1,9 @@
 import React from 'react'
-import Carro from './Cart'
+
 
 const CartWidget = () => {
   return (
-    <div >
-        <Carro />
-    </div>
+    <i className="bi bi-cart3"></i>
   )
 }
 
