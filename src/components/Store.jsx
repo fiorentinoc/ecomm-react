@@ -1,5 +1,4 @@
 import React from 'react'
-import ItemDetailContainer from './ItemDetailContainer'
 import ItemListContainer from './ItemListContainer'
 
 const Store = () => {
@@ -8,7 +7,7 @@ const Store = () => {
         <h1>Catálogo</h1>
         <ItemListContainer greeting='Hola Mundo!!!'/>
         <hr />
-        <ItemDetailContainer />
+        
     </div>
   )
 }

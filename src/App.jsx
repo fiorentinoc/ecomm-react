@@ -4,10 +4,10 @@ import Store from './components/Store';
 import Contact from './components/Contact';
 import Help from './components/Help';
 import Cart from './components/Cart';
-import ItemListContainer from './components/ItemListContainer';
 import FetchData from './utils/FetchData';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
 
@@ -30,6 +30,7 @@ function App() {
         <Route exact path='/contacto' element={<Contact />} />
         <Route exact path='/ayuda' element={<Help />} />
         <Route exact path='/cart' element={<Cart />} />
+        <Route exact path='/detalle/:prodId' element={<ItemDetailContainer />} />
         
       </Routes>
     </Router>

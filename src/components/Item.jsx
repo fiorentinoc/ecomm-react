@@ -2,9 +2,11 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 const Item = ({info}) => {
     return (
+        <Link to={`/detalle/${info.id}`}>
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={info.picUrl} />
             {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
@@ -16,6 +18,7 @@ const Item = ({info}) => {
                 <Button variant="primary">Ver</Button>
             </Card.Body>
         </Card>
+        </Link>
     )
 }
 
