@@ -3,6 +3,7 @@ import Home from './components/Home';
 import Store from './components/Store';
 import Contact from './components/Contact';
 import Help from './components/Help';
+import Cart from './components/Cart';
 import ItemListContainer from './components/ItemListContainer';
 import FetchData from './utils/FetchData';
 import { useEffect, useState } from 'react';
@@ -28,6 +29,7 @@ function App() {
         <Route exact path='/store' element={<Store />} />
         <Route exact path='/contacto' element={<Contact />} />
         <Route exact path='/ayuda' element={<Help />} />
+        <Route exact path='/cart' element={<Cart />} />
         
       </Routes>
     </Router>
