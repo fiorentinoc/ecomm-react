@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../assets/logo_S.jpg'
 import CartWidget from './CartWidget'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 
 const NavBar = () => {
   return (
@@ -16,6 +17,11 @@ const NavBar = () => {
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                         <li><NavLink to="/" className="nav-link px-2 link-dark {(navData) => navData.isActive ? 'active' : '' }" >Home</NavLink></li>
                         <li><NavLink to="/store" className="nav-link px-2 link-dark">Store</NavLink></li>
+                        <NavDropdown to="/store" title="Categorias" id="basic-nav-dropdown">
+                          <NavDropdown.Item href="#action/3.1">Cuerdas</NavDropdown.Item>
+                          <NavDropdown.Item href="#action/3.2">Viento</NavDropdown.Item>
+                          <NavDropdown.Item href="#action/3.3">Percusión</NavDropdown.Item>
+                        </NavDropdown>
                         <li><NavLink to="/contacto" className="nav-link px-2 link-dark">Contacto</NavLink></li>
                         <li><NavLink to="/ayuda" className="nav-link px-2 link-dark">Ayuda</NavLink></li>
                     </ul>

@@ -4,29 +4,30 @@ import React, {useEffect, useState} from 'react'
 import ItemList from './ItemList';
 
 const productos = [
-    { id: "0001", cat: "guitarras", title: "Guitarra Fender", description: "la mejor remera del mercado.", price: "5000", picUrl: "https://img.freepik.com/foto-gratis/planeta-ficticio-cielo-nocturno-colorido-estrellas-nebulosa_1048-7926.jpg?w=2000&t=st=1665096764~exp=1665097364~hmac=e67fcc66ba055d94e6d96562140cdbd0d03da851bdd9b5df4ab91c1d936b52ee" },
-    { id: "0002", cat: "viento", title: "Trompeta Elephant", description: "The best of the world.", price: "8000", picUrl: "https://img.freepik.com/foto-gratis/planeta-ficticio-cielo-nocturno-colorido-estrellas-nebulosa_1048-7926.jpg?w=2000&t=st=1665096764~exp=1665097364~hmac=e67fcc66ba055d94e6d96562140cdbd0d03da851bdd9b5df4ab91c1d936b52ee" },
-    { id: "0003", cat: "percusion", title: "Bateria Boom", description: "Sin dudas la mejor.", price: "10000", picUrl: "https://img.freepik.com/foto-gratis/planeta-ficticio-cielo-nocturno-colorido-estrellas-nebulosa_1048-7926.jpg?w=2000&t=st=1665096764~exp=1665097364~hmac=e67fcc66ba055d94e6d96562140cdbd0d03da851bdd9b5df4ab91c1d936b52ee" },
+    { id: "0001", cat: "guitarras", title: "Guitarra Fender", description: "la mejor remera del mercado.", price: "5000", picUrl: "https://picsum.photos/600/400?random=1" },
+    { id: "0002", cat: "viento", title: "Trompeta Elephant", description: "The best of the world.", price: "8000", picUrl: "https://picsum.photos/600/400?random=2" },
+    { id: "0003", cat: "percusion", title: "Bateria Boom", description: "Sin dudas la mejor.", price: "10000", picUrl: "https://picsum.photos/600/400?random=3" },
 ];
 
 const ItemListContainer = (props) => {
+    
     const [data, setData] = useState([])
 
+    console.log(data)
+
     useEffect(() => {
-      const getData = new Promise(resolve => {
+        const URL = "../data.json"
         setTimeout(() => {
-            resolve(productos)
+            fetch(URL)
+                .then((res) => res.json())
+                .then((data) => setData(data.data))
+                .catch((err) => console.log(err))
         }, 3000);
-      })
-      getData.then(res => setData(res))
-          
-    }, [])
-    
-
-
+    }, [data])
 
     return (
-        <div>
+        data.length 
+        ? <div>
             <h2>ItemListContainer</h2>
             <p>Esta es la prop greeting: {props.greeting}</p>
             
@@ -34,6 +35,7 @@ const ItemListContainer = (props) => {
             <hr />
             
         </div>
+        : <h2>Cargando...</h2>
     )
 }
 
